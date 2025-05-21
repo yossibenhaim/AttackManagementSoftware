@@ -1,11 +1,11 @@
-﻿public class f16jet : IAtteckTool
+﻿public class Weapons : IAtteckTool
 {
     public string name { get; set; }
     public string purpose { get; set; }
     public int countOfAattack { get; set; }
     public int countOfGas { get; set; }
 
-    public f16jet(string name, string purpose, int countOfAattack, int countOfGas)
+    public Weapons(string name, string purpose, int countOfAattack, int countOfGas)
     {
         Name = name;
         Purpose = purpose;

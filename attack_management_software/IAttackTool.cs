@@ -13,10 +13,10 @@ namespace attack_management_software
         int countOfAattack { get; set; }
         int countOfGas { get; set; }
 
-        void IAttackTool(string name, string purpose, int countOfAattack, int countOfGas);
+        public void IAttackTool(string name, string purpose, int countOfAattack, int countOfGas);
 
-        void changeCountAttack();
-        void changeCountGas();
+        public void changeCountAttack();
+        public void changeCountGas();
 
     }
 }
