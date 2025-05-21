@@ -11,7 +11,7 @@ class abctreck void (string datEstablishment, string CurrentManager){
   - F16()
   - hremas460()
   - m109
-    oll the weapoen we 
+    oll the weapoen we heve (name, count of steck, count of gess, type of target)
 
 - IAmn() interface
   - filturOfTerrorist()
@@ -20,5 +20,5 @@ class abctreck void (string datEstablishment, string CurrentManager){
 
 - chmas() - abctreckt
   - dataOfTerurist() - interface
-    this is class that as hare name, rank , weapon, status
+    this is class that as hare (name, rank , weapon, status)
 
