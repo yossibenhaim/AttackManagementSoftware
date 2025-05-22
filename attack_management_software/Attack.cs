@@ -8,9 +8,28 @@ namespace attack_management_software
 {
     internal class Attack
     {
-        public void CarryingOutAttack(string name, IDF idf)
+        all terrorists;
+        tolls tolls;
+        public Attack(all terrorists, tolls tolls)
         {
-            Console.WriteLine(name);
+            this.terrorists = terrorists;
+            this.tolls = tolls;
+        }
+
+        public void FindingSuitableAttackTool(Terrorist terrorist)
+        {
+            foreach (Weapons weapon in this.tolls.Weapons)
+            {
+                if (weapon.purpose == terrorist.Terrorist_location)
+                {
+                    Console.WriteLine($"the locision is {terrorist.Terrorist_location}");
+
+                    Console.WriteLine($"the tool of appropriate is {weapon.name}");
+                    break;
+
+                }
+
+            }
         }
     }
 }
