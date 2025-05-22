@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 namespace attack_management_software
 {
 
-    
     internal class Program
     {
         static void Main(string[] args)
         {
+
             tolls allToll = new tolls();
             Weapons f16 = new Weapons("F16", "Building", 15, 90);
             Weapons f15 = new Weapons("F15", "Building", 10, 50);
@@ -24,6 +24,7 @@ namespace attack_management_software
             allToll.addedTool(f16);
             allToll.addedTool(tank);
             IDF idf = new IDF(allToll);
+
         }
     }
 }
