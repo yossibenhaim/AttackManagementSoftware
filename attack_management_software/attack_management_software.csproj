@@ -48,7 +48,6 @@
     <Compile Include="IDF.cs" />
     <Compile Include="IInfomition.cs" />
     <Compile Include="IntelligenceDivision.cs" />
-    <Compile Include="ITerrorist.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Terrorist.cs" />
