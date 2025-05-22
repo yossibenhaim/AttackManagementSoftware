@@ -6,25 +6,61 @@ using System.Threading.Tasks;
 
 namespace attack_management_software
 {
-    internal interface ITerrorist
+    internal class Terrorist
     {
-         string Name_of_terrorist {  set; }
-         string Type_of_weapon { set; }
-         int Rank { set;}
-         bool Status_terrorist { set; }
+        string Name_of_terrorist;
+        string Type_of_weapon;
+        int Rank;
+        bool Status_terrorist;
+
+        Terrorist (string name, string weapon, int rank, bool status)
+        {
+            this.Name_of_terrorist = name;
+            this.Type_of_weapon= weapon;
+            this.Rank = rank;
+            this.Status_terrorist= status;
+        }
+
+          
+
+        void status_change(bool new_status)
+        {
+            Status_terrorist = new_status;
+        }
 
 
+        void Change_weapons(string new_wapons) 
+        {
+            Type_of_weapon = new_wapons;
+        }
 
-        void status_change(bool new_status);
+        int Dangerous_weapons() 
+        {
+            int Dangerous_weapons = 0;
+            switch (Type_of_weapon)
+            {
+                case "knife":
+                    Dangerous_weapons = 1;
+                    break;
+                case "gun":
+                    Dangerous_weapons = 2;
+                    break;
+                case "M16":
+                    Dangerous_weapons = 3;
+                    break;
+                case "AK47":
+                    Dangerous_weapons = 3;
+                    break;
+            }
+            return Dangerous_weapons; 
+        }
 
+        int level_of_danger(int rank, Func<int> Dangerous_weapons)
+        {
+            int weapons = Dangerous_weapons();
+            int level = weapons * rank;
 
-        void Change_weapons();
-
-        int Dangerous_weapons();
-
-        int level_of_danger(int rank, Func<int> Dangerous_weapons);
-        
-
-
+            return 0; 
+        }
     }
 }
