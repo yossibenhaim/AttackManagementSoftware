@@ -10,15 +10,15 @@ namespace attack_management_software
 {
     internal class IntelligenceDivision 
     {
-        public all terrorists;
-        public IntelligenceDivision(all allTerrorist)
+        public ListAllTerrorist terrorists;
+        public IntelligenceDivision(ListAllTerrorist allTerrorist)
         {
             this.terrorists = allTerrorist;
         }
 
         public void searchTerrorist(string name)
         {
-            foreach(Terrorist terrorist in this.terrorists.Terrorists)
+            foreach(Terrorist terrorist in this.terrorists.list_of_terrorists)
             {
                 if (terrorist.Name_of_terrorist == name)
                 {
@@ -30,16 +30,16 @@ namespace attack_management_software
         public Terrorist SearchingForDangerousTerrorist()
         {
             int low = 0;
-            Terrorist lowTerrorist = this.terrorists.Terrorists[0];
-            foreach (Terrorist terrorist in this.terrorists.Terrorists)
+            Terrorist lowTerrorist = this.terrorists.list_of_terrorists[0];
+            foreach (Terrorist terrorist in this.terrorists.list_of_terrorists)
             {
-                Console.WriteLine(terrorist.level_of_danger());
+
                 if (terrorist.level_of_danger() >= low)
                 {
                     lowTerrorist = terrorist;
                     low = terrorist.level_of_danger();
                 }
-                
+
             }
             return lowTerrorist;
         }

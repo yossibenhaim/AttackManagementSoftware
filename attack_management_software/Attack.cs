@@ -8,9 +8,9 @@ namespace attack_management_software
 {
     internal class Attack
     {
-        all terrorists;
+        ListAllTerrorist terrorists;
         tolls tolls;
-        public Attack(all terrorists, tolls tolls)
+        public Attack(ListAllTerrorist terrorists, tolls tolls)
         {
             this.terrorists = terrorists;
             this.tolls = tolls;
