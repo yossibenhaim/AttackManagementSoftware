@@ -12,10 +12,6 @@ namespace attack_management_software
     {
         static void Main(string[] args)
         {
-            a yossi = new a ("yossi",5);
-            a chaim = new a("chain", 4);
-            List<a> lista = new List<a> { yossi, chaim };
-            c cc = new c(lista);
         }
     }
 }
