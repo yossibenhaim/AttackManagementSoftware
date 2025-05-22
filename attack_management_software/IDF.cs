@@ -7,17 +7,27 @@ using System.Threading.Tasks;
 
 namespace attack_management_software
 {
+
     internal class IDF
     {
-        public IAttackTool weapons;
-        public IInfomition infomition;
-        public Attack attack;
+        //public IAttackTool weapons;
+        public tolls allToll;
 
-        public IDF(IAttackTool attackTool, IInfomition infomition, Attack attack)
+        public IDF(tolls tolls)
         {
-            this.weapons = attackTool;
-            this.infomition = infomition;
-            this.attack = attack;
+            //this.weapons = attackTool;
+            //this.infomition = infomition;
+            this.allToll = tolls;
+            Console.WriteLine("the terrorist is open");
+           
+        }
+        public void print()
+        {
+            foreach (Weapons weapon in allToll.Weapons)
+            {
+                Console.WriteLine(weapon.name);
+            }
         }
     }
+
 }

@@ -18,13 +18,13 @@ namespace attack_management_software
 
         public void searchTerrorist(string name)
         {
-            forach (ITerrorist terrorist in terrorists){
+            //forach (ITerrorist terrorist in terrorists){
 
-                if (terrorist.name == name)
-                {
-                    Console.WriteLine("the terrorist is !!!!");
-                }
-            }
+            //    if (terrorist.name == name)
+            //    {
+            //        Console.WriteLine("the terrorist is !!!!");
+            //    }
+            //}
         }
 
         ITerrorist SearchingForDangerousTerrorist()
