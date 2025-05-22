@@ -8,7 +8,7 @@ namespace attack_management_software
 {
     internal interface IInfomition
     {
-        List <ITerrorist> terrorists { get; set; }
+        List <ListAllTerrorist> terrorists { get; set; }
 
         void searchTerrorist(string name);
 

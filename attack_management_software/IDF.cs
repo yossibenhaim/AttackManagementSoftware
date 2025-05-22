@@ -12,11 +12,11 @@ namespace attack_management_software
     {
         //public IAttackTool weapons;
         public tolls allToll;
-        public all allTerrorist;
+        public ListAllTerrorist allTerrorist;
         public Attack attack;
         public IntelligenceDivision intelligence;
 
-        public IDF(tolls tolls, all terrorist)
+        public IDF(tolls tolls, ListAllTerrorist terrorist)
         {
             this.allToll = tolls;
             this.allTerrorist = terrorist;
@@ -27,14 +27,16 @@ namespace attack_management_software
         {
             foreach (Weapons weapon in allToll.Weapons)
             {
-                Console.WriteLine(weapon.name);
+                Console.WriteLine(weapon.name + "  this is a woepons");
             }
 
-            foreach (Terrorist terrorist in allTerrorist.Terrorists)
+            foreach (Terrorist terrorist in allTerrorist.list_of_terrorists)
             {
-                Console.WriteLine(terrorist.Name_of_terrorist);
+                Console.WriteLine(terrorist.Name_of_terrorist + $"  this is terrorist");
             }
-            Console.WriteLine(intelligence.SearchingForDangerousTerrorist().Name_of_terrorist);
+            Terrorist DangerousTerrorist = intelligence.SearchingForDangerousTerrorist();
+            Console.WriteLine("The most dangerous terrorist is: " + DangerousTerrorist.Name_of_terrorist + "It has a danger level of:" + DangerousTerrorist.level_of_danger());
+
             attack.FindingSuitableAttackTool(intelligence.SearchingForDangerousTerrorist());
         }
     }
