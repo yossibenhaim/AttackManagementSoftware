@@ -35,6 +35,7 @@ namespace attack_management_software
                 Console.WriteLine(terrorist.Name_of_terrorist);
             }
             Console.WriteLine(intelligence.SearchingForDangerousTerrorist().Name_of_terrorist);
+            attack.FindingSuitableAttackTool(intelligence.SearchingForDangerousTerrorist());
         }
     }
 
