@@ -44,10 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAttackTool.cs" />
+    <Compile Include="IDF.cs" />
     <Compile Include="IInfomition.cs" />
+    <Compile Include="IntelligenceDivision.cs" />
     <Compile Include="ITerrorist.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tolls.cs" />
+    <Compile Include="Weapose.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
