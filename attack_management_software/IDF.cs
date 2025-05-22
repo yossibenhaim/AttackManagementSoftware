@@ -18,16 +18,10 @@ namespace attack_management_software
 
         public IDF(tolls tolls, all terrorist)
         {
-            //this.weapons = attackTool;
-            //this.infomition = infomition;
             this.allToll = tolls;
             this.allTerrorist = terrorist;
-            //this.attack = attack;
-            Console.WriteLine("the tools is open");
-            Console.WriteLine("the terrorists is open");
             this.intelligence = new IntelligenceDivision(allTerrorist);
-            
-           
+            this.attack = new Attack(allTerrorist, allToll);
         }
         public void print()
         {
