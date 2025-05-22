@@ -11,12 +11,10 @@ using System.Threading.Tasks;
 namespace attack_management_software
 {
 
-    
     internal class Program
     {
         static void Main(string[] args)
         {
-            
         }
     }
 }
