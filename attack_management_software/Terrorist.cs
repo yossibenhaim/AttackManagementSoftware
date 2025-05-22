@@ -62,12 +62,9 @@ namespace attack_management_software
             return Dangerous_weapons;
         }
 
-        public int level_of_danger(int rank, Func<int> Dangerous_weapons)
+        public int level_of_danger()
         {
-            int weapons = Dangerous_weapons();
-            int level = weapons * rank;
-
-            return 0;
+            return Dangerous_weapons() * this.Rank;
         }
     }
 }

@@ -14,16 +14,19 @@ namespace attack_management_software
         public tolls allToll;
         public all allTerrorist;
         public Attack attack;
+        public IntelligenceDivision intelligence;
 
-        public IDF(tolls tolls, all terrorist, Attack attack)
+        public IDF(tolls tolls, all terrorist)
         {
             //this.weapons = attackTool;
             //this.infomition = infomition;
             this.allToll = tolls;
             this.allTerrorist = terrorist;
-            this.attack = attack;
+            //this.attack = attack;
             Console.WriteLine("the tools is open");
             Console.WriteLine("the terrorists is open");
+            this.intelligence = new IntelligenceDivision(allTerrorist);
+            
            
         }
         public void print()
@@ -37,6 +40,7 @@ namespace attack_management_software
             {
                 Console.WriteLine(terrorist.Name_of_terrorist);
             }
+            Console.WriteLine(intelligence.SearchingForDangerousTerrorist().Name_of_terrorist);
         }
     }
 
