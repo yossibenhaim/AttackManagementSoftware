@@ -12,13 +12,18 @@ namespace attack_management_software
     {
         //public IAttackTool weapons;
         public tolls allToll;
+        public all allTerrorist;
+        public Attack attack;
 
-        public IDF(tolls tolls)
+        public IDF(tolls tolls, all terrorist, Attack attack)
         {
             //this.weapons = attackTool;
             //this.infomition = infomition;
             this.allToll = tolls;
-            Console.WriteLine("the terrorist is open");
+            this.allTerrorist = terrorist;
+            this.attack = attack;
+            Console.WriteLine("the tools is open");
+            Console.WriteLine("the terrorists is open");
            
         }
         public void print()
@@ -26,6 +31,11 @@ namespace attack_management_software
             foreach (Weapons weapon in allToll.Weapons)
             {
                 Console.WriteLine(weapon.name);
+            }
+
+            foreach (Terrorist terrorist in allTerrorist.Terrorists)
+            {
+                Console.WriteLine(terrorist.Name_of_terrorist);
             }
         }
     }
