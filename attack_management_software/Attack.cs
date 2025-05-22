@@ -8,5 +8,11 @@ namespace attack_management_software
 {
     internal class Attack
     {
+        public List<ITerrorist> terrorists = new List<ITerrorist>();
+            
+        public void CarryingOutAttack(ITerrorist terrorist)
+        {
+
+        }
     }
 }

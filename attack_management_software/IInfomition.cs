@@ -10,8 +10,8 @@ namespace attack_management_software
     {
         List <ITerrorist> terrorists { get; set; }
 
-        ITerrorist searchTerrorist(string name);
+        void searchTerrorist(string name);
 
-        ITerrorist SearchingForDangerousTerrorist();
+        void SearchingForDangerousTerrorist();
     }
 }
