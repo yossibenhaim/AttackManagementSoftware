@@ -9,12 +9,15 @@ namespace attack_management_software
 {
     internal class IDF
     {
-        private IAttackTool weapons;
-        private IInfomition infomition;
-        private Attack attack;
+        public IAttackTool weapons;
+        public IInfomition infomition;
+        public Attack attack;
 
         public IDF(IAttackTool attackTool, IInfomition infomition, Attack attack)
-        {this.weapons = attackTool; this.infomition = infomition; this.attack = attack; }
-
+        {
+            this.weapons = attackTool;
+            this.infomition = infomition;
+            this.attack = attack;
+        }
     }
 }
