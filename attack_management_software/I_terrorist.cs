@@ -36,6 +36,11 @@ namespace attack_management_software
             Type_of_weapon = new_wapons;
         }
 
+        void Chenge_location(string new_location)
+        {
+            Terrorist_location = new_location;
+        }
+
         int Dangerous_weapons() 
         {
             int Dangerous_weapons = 0;
