@@ -36,8 +36,12 @@ namespace attack_management_software
 
                 if (terrorist.level_of_danger() >= low)
                 {
-                    lowTerrorist = terrorist;
-                    low = terrorist.level_of_danger();
+                    if (terrorist.Status_terrorist) { }
+                    else
+                    {
+                        lowTerrorist = terrorist;
+                        low = terrorist.level_of_danger();
+                    }
                 }
 
             }
