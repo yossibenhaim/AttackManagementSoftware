@@ -9,13 +9,15 @@ namespace attack_management_software
     internal class Terrorist
     {
         string Name_of_terrorist;
+        string Terrorist_location;
         string Type_of_weapon;
         int Rank;
         bool Status_terrorist;
 
-        Terrorist (string name, string weapon, int rank, bool status)
+        Terrorist (string name, string location, string weapon, int rank, bool status)
         {
             this.Name_of_terrorist = name;
+            this.Terrorist_location = location;
             this.Type_of_weapon= weapon;
             this.Rank = rank;
             this.Status_terrorist= status;
