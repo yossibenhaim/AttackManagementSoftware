@@ -12,22 +12,15 @@ namespace attack_management_software
         public string Terrorist_location;
         public string Type_of_weapon;
         public int Rank;
-        public bool Status_terrorist;
+        public bool Status;
 
-        public Terrorist(string name, string location, string weapon, int rank, bool status)
+        public Terrorist(string name, string location, string weapon, int rank)
         {
             this.Name_of_terrorist = name;
             this.Terrorist_location = location;
             this.Type_of_weapon = weapon;
             this.Rank = rank;
-            this.Status_terrorist = status;
-        }
-
-
-
-        void status_change(bool new_status)
-        {
-            Status_terrorist = new_status;
+            this.Status = true;
         }
 
 

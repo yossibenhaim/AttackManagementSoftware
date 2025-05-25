@@ -17,7 +17,7 @@ namespace attack_management_software
         {
             ListAllTerrorist terrorists = new ListAllTerrorist();
             terrorists.Terrorist_creator();
-            
+
             tolls allToll = new tolls();
 
             Weapons f16 = new Weapons("F16", "Building", 15, 90);

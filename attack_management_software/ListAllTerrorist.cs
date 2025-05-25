@@ -54,7 +54,7 @@ namespace attack_management_software
         {
             for (int i = 0; i < 11; i++) 
             {
-                Terrorist terrorist = new Terrorist(creates_names(), creates_location(), creates_type_of_weapon(), creates_dark(), true);
+                Terrorist terrorist = new Terrorist(creates_names(), creates_location(), creates_type_of_weapon(), creates_dark());
                 list_of_terrorists.Add(terrorist);
             }
         }
