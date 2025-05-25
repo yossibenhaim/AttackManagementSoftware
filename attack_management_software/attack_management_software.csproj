@@ -43,12 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="all.terrorist.cs" />
     <Compile Include="AllMessage.cs" />
     <Compile Include="Attack.cs" />
     <Compile Include="IAttackTool.cs" />
     <Compile Include="IDF.cs" />
-    <Compile Include="IInfomition.cs" />
     <Compile Include="IntelligenceDivision.cs" />
     <Compile Include="IntelligenceMessages.cs" />
     <Compile Include="ListAllTerrorist.cs" />

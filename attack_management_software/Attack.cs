@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -17,6 +18,32 @@ namespace attack_management_software
             this.tolls = tolls;
         }
 
+        public Weapons FindingSuitableAttackTool2(Terrorist terrorist)
+        {
+            foreach (Weapons weapon in this.tolls.Weapons)
+            {
+                if (weapon.purpose == terrorist.Terrorist_location)
+                {
+                    return weapon;
+                }
+            }
+            return tolls.Weapons[0];
+        }
+
+        public bool FindingSuitableAttackTool1(Terrorist terrorist)
+        {
+            foreach (Weapons weapon in this.tolls.Weapons)
+            {
+                if (weapon.purpose == terrorist.Terrorist_location)
+                {
+                    if ((weapon.countOfGas > 0) && (weapon.countOfAattack > 0))
+                    {
+                        return true;
+                    }
+                }
+            }return false;
+        }
+
         public void FindingSuitableAttackTool(Terrorist terrorist)
         {
             bool check = false;
@@ -24,14 +51,13 @@ namespace attack_management_software
             {
                 if (weapon.purpose == terrorist.Terrorist_location)
                 {
-                    check = true;
-                    Console.WriteLine($"the locision is {terrorist.Terrorist_location}");
-                    Console.WriteLine($"the tool of appropriate is {weapon.name}");
-
-                    
-
+                    if ((weapon.countOfGas > 0) && (weapon.countOfAattack > 0))
+                    {
+                        check = true;
+                        Console.WriteLine($"the locision is {terrorist.Terrorist_location}");
+                        Console.WriteLine($"the tool of appropriate is {weapon.name}");
+                    }    
                 }
-
             }
             if (!check)
             {
@@ -43,12 +69,16 @@ namespace attack_management_software
 
         public void attack(Terrorist terrorist)
         {
+
+            Weapons weapon = FindingSuitableAttackTool2(terrorist);
             Console.WriteLine("If you want to perform the attack, press 1. Otherwise, press 2.");
             int a = Convert.ToInt32(Console.ReadLine());
             switch (a)
             {
                 case 1:
                     terrorist.Status = false;
+                    weapon.countOfAattack--;
+                    weapon.countOfGas--;
                     Console.WriteLine($"The terrorist {terrorist.Name_of_terrorist} has been eliminated!!");
                     break;
 
@@ -63,6 +93,7 @@ namespace attack_management_software
 
     }
 }
+
 
 
 
