@@ -11,10 +11,12 @@ namespace attack_management_software
     {
         public string name;
         public string location;
-        public IntelligenceMessages(string name, string location)
+        public string date;
+        public IntelligenceMessages(string name, string location, string date )
         {
             this.name = name;
             this.location = location;
+            this.date = date;
         }
 
 

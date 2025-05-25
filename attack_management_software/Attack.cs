@@ -30,19 +30,6 @@ namespace attack_management_software
             return tolls.Weapons[0];
         }
 
-        public bool FindingSuitableAttackTool1(Terrorist terrorist)
-        {
-            foreach (Weapons weapon in this.tolls.Weapons)
-            {
-                if (weapon.purpose == terrorist.Terrorist_location)
-                {
-                    if ((weapon.countOfGas > 0) && (weapon.countOfAattack > 0))
-                    {
-                        return true;
-                    }
-                }
-            }return false;
-        }
 
         public void FindingSuitableAttackTool(Terrorist terrorist)
         {
