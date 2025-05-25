@@ -28,9 +28,9 @@ namespace attack_management_software
             terrorists.Terrorist_creator();
             tolls allToll = new tolls();
 
-            Weapons f16 = new Weapons("F16", "building", 15, 90);
-            Weapons f15 = new Weapons("F15", "cave", 10, 50);
-            Weapons tank = new Weapons("tank", "car", 9, 200);
+            Weapons f16 = new Weapons("F16", "building", 10, 10);
+            Weapons f15 = new Weapons("F15", "cave", 15, 18);
+            Weapons tank = new Weapons("tank", "car", 20, 30);
             allToll.addedTool(f15);
             allToll.addedTool(f16);
             allToll.addedTool(tank);

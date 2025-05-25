@@ -32,31 +32,22 @@ namespace attack_management_software
         public Terrorist SearchingForDangerousTerrorist()
         {
             int hige = 0;
-            Terrorist lowTerrorist = this.terrorists.list_of_terrorists[0];
+            Terrorist higeTerrorist = this.terrorists.list_of_terrorists[0];
             foreach (Terrorist terrorist in this.terrorists.list_of_terrorists)
-            {
-
+            { 
                 if (terrorist.level_of_danger() >= hige)
                 {
                     if (terrorist.Status) 
                     {
-                        lowTerrorist = terrorist;
+                        higeTerrorist = terrorist;
                         hige = terrorist.level_of_danger();
-                    }
-                    else
-                    {
-                        
                     }
                 }
 
             }
-            return lowTerrorist;
+            return higeTerrorist;
         }
 
-        public void SearchForTerroristWithTheMostMessages()
-        {
-            int num = 0;
-            Console.WriteLine(num);
-        }
+
     }
 }
