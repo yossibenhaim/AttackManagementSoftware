@@ -30,8 +30,8 @@ namespace attack_management_software
 
         public string creates_location()
         {
-            string[] locations = { "home", "car", "outside", "building", "cave"};
-            int num = _rnd.Next (0, locations.Length-1);  
+            string[] locations = { "car", "building", "cave"};
+            int num = _rnd.Next (0, locations.Length);  
             string location = locations[num];
             return location;
         }
@@ -45,7 +45,7 @@ namespace attack_management_software
         public string creates_type_of_weapon()
         {
             string[] weapons = { "knife", "gun", "M16", "AK47"};
-            int num = _rnd.Next(0, weapons.Length - 1);
+            int num = _rnd.Next(0, weapons.Length );
             string type = weapons[num];
             return type;
         }

@@ -30,27 +30,28 @@ namespace attack_management_software
         {
             Terrorist DangerousTerrorist = intelligence.SearchingForDangerousTerrorist();
             Console.WriteLine("The most dangerous terrorist is: " + DangerousTerrorist.Name_of_terrorist + "It has a danger level of:" + DangerousTerrorist.level_of_danger());
+            attack.FindingSuitableAttackTool(intelligence.SearchingForDangerousTerrorist());
 
         }
 
         public void print()
         {
             allMessage.CreateMessage();
-            allMessage.PringAllMassage();
-            allMessage.CreateMessage();
+
             allMessage.PringAllMassage();
 
-            foreach (Weapons weapon in allToll.Weapons)
-            {
-                Console.WriteLine(weapon.name + "  this is a woepons");
-            }
+            //foreach (Weapons weapon in allToll.Weapons)
+            //{
+            //    Console.WriteLine(weapon.name + "  this is a woepons");
+            //}
 
-            foreach (Terrorist terrorist in allTerrorist.list_of_terrorists)
-            {
-                Console.WriteLine(terrorist.Name_of_terrorist + $"  this is terrorist");
-            }
-            
-            attack.FindingSuitableAttackTool(intelligence.SearchingForDangerousTerrorist());
+            //foreach (Terrorist terrorist in allTerrorist.list_of_terrorists)
+            //{
+            //    Console.WriteLine(terrorist.Name_of_terrorist + $"  this is terrorist");
+            //}
+          
+
+
         }
     }
 

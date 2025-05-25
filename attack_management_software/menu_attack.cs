@@ -28,9 +28,9 @@ namespace attack_management_software
             terrorists.Terrorist_creator();
             tolls allToll = new tolls();
 
-            Weapons f16 = new Weapons("F16", "Building", 15, 90);
-            Weapons f15 = new Weapons("F15", "Building", 10, 50);
-            Weapons tank = new Weapons("tank", "knife", 9, 200);
+            Weapons f16 = new Weapons("F16", "building", 15, 90);
+            Weapons f15 = new Weapons("F15", "cave", 10, 50);
+            Weapons tank = new Weapons("tank", "car", 9, 200);
             allToll.addedTool(f15);
             allToll.addedTool(f16);
             allToll.addedTool(tank);
@@ -44,16 +44,19 @@ namespace attack_management_software
                 switch (num)
             {
                 case 1:
-                    Console.WriteLine("sd");
+                        idf.print();
                     break;
                 case 2:
                         idf.Finding_the_Most_Dangerous_Terrorist();
                         break;
                 case 3:
-                    Console.WriteLine();
+                    foreach (Weapons tool in allToll.Weapons)
+                        {
+                            Console.WriteLine($"The {tool.name} vessel is designed for attack in {tool.purpose} and has {tool.countOfAattack} ammunition. And {tool.countOfGas} fuel.");
+                        }
                     break;
                 case 4:
-                    Console.WriteLine();
+                        idf.attack.attack(idf.intelligence.SearchingForDangerousTerrorist());
                         break;
                 case 5:
                     run = false;
