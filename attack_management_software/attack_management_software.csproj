@@ -51,6 +51,8 @@
     <Compile Include="IntelligenceDivision.cs" />
     <Compile Include="IntelligenceMessages.cs" />
     <Compile Include="ListAllTerrorist.cs" />
+    <Compile Include="menu.cs" />
+    <Compile Include="menu_attack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Terrorist.cs" />
