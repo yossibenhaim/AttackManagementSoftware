@@ -43,21 +43,17 @@ namespace attack_management_software
 
         public void CreateMessage()
         {
-            IntelligenceMessages intelligenceMessages = new IntelligenceMessages(FindingName(), FindingLocation());
+            string correntTime = DateTime.Now.ToString();
+            IntelligenceMessages intelligenceMessages = new IntelligenceMessages(FindingName(), FindingLocation(), correntTime);
             AddMessage(intelligenceMessages);
-            PringAllMassage();
         }
         public void AddMessage(IntelligenceMessages message)
-        {
-            this.messages.Add(message);
-        }
+        { this.messages.Add(message); }
         
         public void PringAllMassage()
         {
             foreach (IntelligenceMessages m in this.messages)
-            {
-                Console.WriteLine(m.name + " " + m.location);
-            }
+            { Console.WriteLine($"the terrorist {m.name} is show in {m.location} in {m.date}"); }
         }
 
 
