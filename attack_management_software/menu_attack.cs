@@ -12,11 +12,13 @@ namespace attack_management_software
     {
         public int Menu()
         {
-            Console.WriteLine("\r\n \r\n To display a terrorist with the most messages, press \"1\"." +
-                " \r\n To display the Most Dangerous Terrorist, press \"2\"." +
-                " \r\n To view attack tools and their status press \"3\"." +
-                " \r\n To perform an attack, press \"4\"." +
-                " \r\n To exit press \"5\".  ");
+            Console.WriteLine(
+                "\r\n \r\n To print all living terrorists, click 1." +
+                "To display a terrorist with the most messages, press \"2\"." +
+                " \r\n To display the Most Dangerous Terrorist, press \"3\"." +
+                " \r\n To view attack tools and their status press \"4\"." +
+                " \r\n To perform an attack, press \"5\"." +
+                " \r\n To exit press \"6\".  ");
             int num = int.Parse(Console.ReadLine());
             return num;
         }

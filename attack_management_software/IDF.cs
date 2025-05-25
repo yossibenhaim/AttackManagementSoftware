@@ -38,7 +38,7 @@ namespace attack_management_software
         {
             allMessage.CreateMessage();
 
-            allMessage.PringAllMassage();
+            allMessage.PrintAllMassage();
 
             //foreach (Weapons weapon in allToll.Weapons)
             //{
