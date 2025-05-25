@@ -10,21 +10,28 @@ namespace attack_management_software
 
     internal class IDF
     {
-        //public IAttackTool weapons;
+
         public tolls allToll;
         public ListAllTerrorist allTerrorist;
         public Attack attack;
         public IntelligenceDivision intelligence;
+        public AllMessage allMessage;
 
         public IDF(tolls tolls, ListAllTerrorist terrorist)
         {
             this.allToll = tolls;
             this.allTerrorist = terrorist;
-            this.intelligence = new IntelligenceDivision(allTerrorist);
+            this.allMessage = new AllMessage(allTerrorist);
+            this.intelligence = new IntelligenceDivision(allTerrorist, allMessage);
             this.attack = new Attack(allTerrorist, allToll);
         }
         public void print()
         {
+            allMessage.CreateMessage();
+            allMessage.PringAllMassage();
+            allMessage.CreateMessage();
+            allMessage.PringAllMassage();
+
             foreach (Weapons weapon in allToll.Weapons)
             {
                 Console.WriteLine(weapon.name + "  this is a woepons");

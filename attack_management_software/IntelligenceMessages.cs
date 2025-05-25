@@ -9,16 +9,17 @@ namespace attack_management_software
 {
     internal class IntelligenceMessages
     {
-        all allterrorist;
-
-        public IntelligenceMessages(all allTerrorist)
+        public string name;
+        public string location;
+        public IntelligenceMessages(string name, string location)
         {
-            this.allterrorist = allTerrorist;
+            this.name = name;
+            this.location = location;
         }
 
-        Random rendom = new Random();
 
-        
+
+
 
 
     }
