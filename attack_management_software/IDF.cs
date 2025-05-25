@@ -23,6 +23,14 @@ namespace attack_management_software
             this.intelligence = new IntelligenceDivision(allTerrorist);
             this.attack = new Attack(allTerrorist, allToll);
         }
+
+        public void Finding_the_Most_Dangerous_Terrorist()
+        {
+            Terrorist DangerousTerrorist = intelligence.SearchingForDangerousTerrorist();
+            Console.WriteLine("The most dangerous terrorist is: " + DangerousTerrorist.Name_of_terrorist + "It has a danger level of:" + DangerousTerrorist.level_of_danger());
+
+        }
+
         public void print()
         {
             foreach (Weapons weapon in allToll.Weapons)
@@ -34,9 +42,7 @@ namespace attack_management_software
             {
                 Console.WriteLine(terrorist.Name_of_terrorist + $"  this is terrorist");
             }
-            Terrorist DangerousTerrorist = intelligence.SearchingForDangerousTerrorist();
-            Console.WriteLine("The most dangerous terrorist is: " + DangerousTerrorist.Name_of_terrorist + "It has a danger level of:" + DangerousTerrorist.level_of_danger());
-
+            
             attack.FindingSuitableAttackTool(intelligence.SearchingForDangerousTerrorist());
         }
     }

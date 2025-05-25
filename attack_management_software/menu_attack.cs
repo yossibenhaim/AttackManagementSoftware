@@ -13,7 +13,7 @@ namespace attack_management_software
         public int Menu()
         {
             Console.WriteLine(" To display a terrorist with the most messages, press \"1\"." +
-                " \r\n To display a terrorist by level of danger, press \"2\"." +
+                " \r\n To display the Most Dangerous Terrorist, press \"2\"." +
                 " \r\n To view attack tools and their status press \"3\"." +
                 " \r\n To perform an attack, press \"4\"." +
                 " \r\n To exit press \"5\".  ");
@@ -24,7 +24,19 @@ namespace attack_management_software
 
         public void start_menu(Func<int> menu)
         {
-            
+            ListAllTerrorist terrorists = new ListAllTerrorist();
+            terrorists.Terrorist_creator();
+            tolls allToll = new tolls();
+
+            Weapons f16 = new Weapons("F16", "Building", 15, 90);
+            Weapons f15 = new Weapons("F15", "Building", 10, 50);
+            Weapons tank = new Weapons("tank", "knife", 9, 200);
+            allToll.addedTool(f15);
+            allToll.addedTool(f16);
+            allToll.addedTool(tank);
+
+            IDF idf = new IDF(allToll, terrorists);
+
             bool run = true;
             while (run) 
             {
@@ -35,8 +47,8 @@ namespace attack_management_software
                     Console.WriteLine("sd");
                     break;
                 case 2:
-                    Console.WriteLine();
-                    break;
+                        idf.Finding_the_Most_Dangerous_Terrorist();
+                        break;
                 case 3:
                     Console.WriteLine();
                     break;
