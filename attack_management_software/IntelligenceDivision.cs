@@ -11,9 +11,11 @@ namespace attack_management_software
     internal class IntelligenceDivision 
     {
         public ListAllTerrorist terrorists;
-        public IntelligenceDivision(ListAllTerrorist allTerrorist)
+        public AllMessage messages;
+        public IntelligenceDivision(ListAllTerrorist allTerrorist, AllMessage allMessage)
         {
             this.terrorists = allTerrorist;
+            this.messages = allMessage;
         }
 
         public void searchTerrorist(string name)
@@ -29,23 +31,32 @@ namespace attack_management_software
 
         public Terrorist SearchingForDangerousTerrorist()
         {
-            int low = 0;
+            int hige = 0;
             Terrorist lowTerrorist = this.terrorists.list_of_terrorists[0];
             foreach (Terrorist terrorist in this.terrorists.list_of_terrorists)
             {
 
-                if (terrorist.level_of_danger() >= low)
+                if (terrorist.level_of_danger() >= hige)
                 {
-                    if (terrorist.Status_terrorist) { }
-                    else
+                    if (terrorist.Status) 
                     {
                         lowTerrorist = terrorist;
-                        low = terrorist.level_of_danger();
+                        hige = terrorist.level_of_danger();
+                    }
+                    else
+                    {
+                        
                     }
                 }
 
             }
             return lowTerrorist;
+        }
+
+        public void SearchForTerroristWithTheMostMessages()
+        {
+            int num = 0;
+            Console.WriteLine(num);
         }
     }
 }
