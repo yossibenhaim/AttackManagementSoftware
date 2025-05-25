@@ -48,6 +48,17 @@ namespace attack_management_software
             return higeTerrorist;
         }
 
+        public void printAllTerroristIsLife()
+        {
+            foreach (Terrorist terrorist in terrorists.list_of_terrorists)
+            {
+                if (terrorist.Status)
+                {
+                    Console.WriteLine($"name :{terrorist.Name_of_terrorist} -- Rating {terrorist.level_of_danger()}");
+                }
+            }
+        }
+
 
     }
 }

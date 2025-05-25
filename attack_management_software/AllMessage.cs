@@ -50,7 +50,7 @@ namespace attack_management_software
         public void AddMessage(IntelligenceMessages message)
         { this.messages.Add(message); }
         
-        public void PringAllMassage()
+        public void PrintAllMassage()
         {
             foreach (IntelligenceMessages m in this.messages)
             { Console.WriteLine($"the terrorist {m.name} is show in {m.location} in {m.date}"); }

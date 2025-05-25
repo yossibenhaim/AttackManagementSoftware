@@ -13,7 +13,7 @@ namespace attack_management_software
         public int Menu()
         {
             Console.WriteLine(
-                "\r\n \r\n To print all living terrorists, click 1." +
+                "\r\n \r\n To print all living terrorists, click 1.\n" +
                 "To display a terrorist with the most messages, press \"2\"." +
                 " \r\n To display the Most Dangerous Terrorist, press \"3\"." +
                 " \r\n To view attack tools and their status press \"4\"." +
@@ -46,21 +46,22 @@ namespace attack_management_software
                 switch (num)
                 {
                     case 1:
-                        idf.print();
+                        idf.intelligence.printAllTerroristIsLife();
                         break;
                     case 2:
-                        idf.Finding_the_Most_Dangerous_Terrorist();
+                        idf.print();
                         break;
                     case 3:
-                        foreach (Weapons tool in allToll.Weapons)
-                        {
-                            Console.WriteLine($"The {tool.name} vessel is designed for attack in {tool.purpose} and has {tool.countOfAattack} ammunition. And {tool.countOfGas} fuel.");
-                        }
+                        idf.Finding_the_Most_Dangerous_Terrorist();
                         break;
                     case 4:
-                        idf.attack.attack(idf.intelligence.SearchingForDangerousTerrorist());
+                        foreach (Weapons tool in allToll.Weapons)
+                        { Console.WriteLine($"The {tool.name} vessel is designed for attack in {tool.purpose} and has {tool.countOfAattack} ammunition. And {tool.countOfGas} fuel."); }
                         break;
                     case 5:
+                        idf.attack.attack(idf.intelligence.SearchingForDangerousTerrorist());
+                        break;
+                    case 6:
                         run = false;
                         break;
                     default:
