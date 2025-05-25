@@ -41,8 +41,16 @@ namespace attack_management_software
                     Console.WriteLine();
                     break;
                 case 4:
+                    Console.WriteLine();
+                        break;
+                case 5:
                     run = false;
                     break;
+                default:
+                    Console.WriteLine("Wrong choice");
+                    break;
+
+
 
             }
             }
