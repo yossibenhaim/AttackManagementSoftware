@@ -27,7 +27,7 @@ namespace attack_management_software
             ListAllTerrorist terrorists = new ListAllTerrorist();
             terrorists.Terrorist_creator();
             tolls allToll = new tolls();
-
+            Video video = new Video();
             Weapons f16 = new Weapons("F16", "building", 10, 10);
             Weapons f15 = new Weapons("F15", "cave", 15, 18);
             Weapons tank = new Weapons("tank", "car", 20, 30);
