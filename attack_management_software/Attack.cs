@@ -10,84 +10,37 @@ namespace attack_management_software
 {
     internal class Attack
     {
-        ListAllTerrorist terrorists;
         tolls tolls;
-        public Attack(ListAllTerrorist terrorists, tolls tolls)
+        public Attack(tolls tolls)
         {
-            this.terrorists = terrorists;
             this.tolls = tolls;
         }
 
-        public Weapons FindingSuitableAttackTool2(Terrorist terrorist)
+        //public Weapons FindingSuitableAttackTool2(Terrorist terrorist)
+        //{
+        //    foreach (Weapons weapon in this.tolls.Weapons)
+        //    { if (weapon.purpose == terrorist.Terrorist_location)
+        //        { return weapon; }
+        //    } return null;
+        //}
+
+
+        public Weapons FindingSuitableAttackTool(Terrorist terrorist)
         {
             foreach (Weapons weapon in this.tolls.Weapons)
             {
                 if (weapon.purpose == terrorist.Terrorist_location)
                 {
-                    return weapon;
+                    if ((weapon.countOfGas > 5) && (weapon.countOfAattack > 1)) {return weapon; }
+                    
+                    else if (weapon.countOfGas > 5) { Console.WriteLine($"The appropriate tool is {weapon.name} but you don't have enough ammunition for the attack. You have {weapon.countOfAattack} bombs."); }
+                    if (weapon.countOfAattack < 1) { Console.WriteLine($"The appropriate tool is {weapon.name} but you don't have enough fuel for the attack. You have {weapon.countOfGas} liters of fuel."); }
                 }
-            }
-            return tolls.Weapons[0];
-        }
-
-
-        public void FindingSuitableAttackTool(Terrorist terrorist)
-        {
-            bool check = false;
-            foreach (Weapons weapon in this.tolls.Weapons)
-            {
-                if (weapon.purpose == terrorist.Terrorist_location)
-                {
-                    if ((weapon.countOfGas > 0) && (weapon.countOfAattack > 0))
-                    {
-                        check = true;
-                        Console.WriteLine($"Location           : {terrorist.Terrorist_location}");
-                        Console.WriteLine($"Appropriate Weapon : {weapon.name}");
-                        break;
-
-                    }
-                }
-            }
-            if (!check)
-            {
-                Console.WriteLine("You don't have a suitable tool available for the attack.");
-            }
+            }return null;
         }
 
 
 
-        public void attack(Terrorist terrorist)
-        {
-
-            Weapons weapon = FindingSuitableAttackTool2(terrorist);
-            Console.WriteLine("To perform the attack, press 1. To cancel, press 2.");
-
-            int a;
-            while (!int.TryParse(Console.ReadLine(), out a) || (a != 1 && a != 2))
-            {
-                Console.WriteLine("Invalid input. Please press 1 to attack or 2 to cancel.");
-            }
-
-            switch (a)
-            {
-                case 1:
-                    terrorist.Status = false;
-                    weapon.countOfAattack--;
-                    weapon.countOfGas--;
-                    Console.WriteLine($"The terrorist {terrorist.Name_of_terrorist} has been eliminated!");
-                    break;
-
-                case 2:
-                    Console.WriteLine("Attack cancelled.");
-                    break;
-
-                default:
-                    Console.WriteLine("Unexpected error: Invalid choice.");
-                    break;
-            }
-
-
-        }
 
     }
 }

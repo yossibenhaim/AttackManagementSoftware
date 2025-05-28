@@ -10,20 +10,18 @@ namespace attack_management_software
     internal class AllMessage
     {
         public List<IntelligenceMessages> messages = new List<IntelligenceMessages>();
-        public ListAllTerrorist listAllTerrorist;
+        public ListAllTerrorist allTerrorist;
 
         Random random = new Random();
 
-        public AllMessage(ListAllTerrorist listAllTerrorist)
+        public AllMessage(ListAllTerrorist allTerrorist)
         {
-            this.listAllTerrorist = listAllTerrorist;
+            this.allTerrorist = allTerrorist;
         }
-
-
         public string FindingName()
         {
-            int num = random.Next(0, listAllTerrorist.list_of_terrorists.Count);
-            return listAllTerrorist.list_of_terrorists[num].Name_of_terrorist;
+            int num = random.Next(0, allTerrorist.list_of_terrorists.Count);
+            return allTerrorist.list_of_terrorists[num].Name_of_terrorist;
         }
 
         public string FindingLocation()
@@ -41,7 +39,7 @@ namespace attack_management_software
 
         }
 
-        public void CreateMessage()
+        public void CreateNewIntelligenceReport()
         {
             string correntTime = DateTime.Now.ToString();
             IntelligenceMessages intelligenceMessages = new IntelligenceMessages(FindingName(), FindingLocation(), correntTime);
@@ -50,14 +48,9 @@ namespace attack_management_software
         public void AddMessage(IntelligenceMessages message)
         { this.messages.Add(message); }
         
-        public void PrintAllMassage()
+        public List<IntelligenceMessages> ReturnAllMassage()
         {
-            Console.WriteLine("===== Most Active Terrorist - Message Log =====");
-            foreach (IntelligenceMessages m in this.messages)
-            {
-                Console.WriteLine($"Terrorist: {m.name,-20} | Location: {m.location,-15} | Date: {m.date}");
-            }
-
+            return messages;
         }
 
 

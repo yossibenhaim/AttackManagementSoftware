@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.PerformanceData;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -8,11 +9,9 @@ using System.Threading.Tasks;
 
 namespace attack_management_software
 {
-    internal class menu_attack
+    internal class menu_attack 
     {
-        public int Menu()
-        {
-            Console.WriteLine(@"
+        private const string MainMenuText = @"
 ========= Terrorist Management System =========
 
 [1]  Show all living terrorists
@@ -24,67 +23,62 @@ namespace attack_management_software
 
 ==============================================
 Enter your choice:
-");
+";
+        public int Menu()
+        {
+            Console.WriteLine(MainMenuText);
 
-            int num = int.Parse(Console.ReadLine());
+            int num;
+            while (!int.TryParse(Console.ReadLine(), out num) || (num >= 1 && num <= 6))
+            {
+                Console.WriteLine("Invalid input. Please press a number between 1 and 6..");
+            }
             return num;
         }
 
 
         public void start_menu(Func<int> menu)
         {
-            ListAllTerrorist terrorists = new ListAllTerrorist();
-            terrorists.Terrorist_creator();
+
             tolls allToll = new tolls();
             Video video = new Video();
-            Weapons f16 = new Weapons("F16", "building", 10, 10);
-            Weapons f15 = new Weapons("F15", "cave", 15, 18);
+            Weapons f16 = new Weapons("F16", "building", 1, 10);
+            Weapons f15 = new Weapons("F15", "cave", 1, 18);
             Weapons tank = new Weapons("tank", "car", 20, 30);
             allToll.addedTool(f15);
             allToll.addedTool(f16);
             allToll.addedTool(tank);
 
-            IDF idf = new IDF(allToll, terrorists);
+            ListAllTerrorist allTerrorist = new ListAllTerrorist();
+            allTerrorist.Terrorist_creator();
+            IDF idf = new IDF(allToll, allTerrorist);
+
 
             bool run = true;
             while (run)
             {
-                int num = menu();
+
+                    int num = menu();
                 switch (num)
                 {
                     case 1:
-                        idf.intelligence.printAllTerroristIsLife();
+                        idf.printAllTerroristIsLife();
                         break;
                     case 2:
-                        idf.print();
+                        idf.PrintAllMessage();
                         break;
                     case 3:
-                        idf.Finding_the_Most_Dangerous_Terrorist();
+                        idf.PrintTheMostDangerousTerrorist();
                         break;
                     case 4:
-                        Console.WriteLine("===== Attack Tools Status =====");
-
-                        foreach (Weapons tool in allToll.Weapons)
-                        {
-                            Console.WriteLine($"Tool Name   : {tool.name}");
-                            Console.WriteLine($"Purpose     : {tool.purpose}");
-                            Console.WriteLine($"Ammunition  : {tool.countOfAattack}");
-                            Console.WriteLine($"Fuel        : {tool.countOfGas}");
-                            Console.WriteLine(new string('-', 35));
-                        }
+                        idf.PrintStatusToolsAttack();
                         break;
                     case 5:
-                        idf.attack.attack(idf.intelligence.SearchingForDangerousTerrorist());
+                        idf.AttackAndPrint();
                         break;
                     case 6:
                         run = false;
                         break;
-                    default:
-                        Console.WriteLine("Invalid choice. Please enter a number between 1 and 6.");
-                        break;
-
-
-
                 }
             }
 
