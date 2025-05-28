@@ -29,8 +29,13 @@ namespace attack_management_software
         public void Finding_the_Most_Dangerous_Terrorist()
         {
             Terrorist DangerousTerrorist = intelligence.SearchingForDangerousTerrorist();
-            Console.WriteLine("The most dangerous terrorist is: " + DangerousTerrorist.Name_of_terrorist + "It has a danger level of:" + DangerousTerrorist.level_of_danger());
-            attack.FindingSuitableAttackTool(intelligence.SearchingForDangerousTerrorist());
+
+            Console.WriteLine("===== Most Dangerous Terrorist =====");
+            Console.WriteLine($"Name         : {DangerousTerrorist.Name_of_terrorist}");
+            Console.WriteLine($"Danger Level : {DangerousTerrorist.level_of_danger()}");
+
+            attack.FindingSuitableAttackTool(DangerousTerrorist);
+
 
         }
 

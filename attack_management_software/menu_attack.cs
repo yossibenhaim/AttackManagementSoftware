@@ -12,13 +12,20 @@ namespace attack_management_software
     {
         public int Menu()
         {
-            Console.WriteLine(
-                "\r\n \r\n To print all living terrorists, click 1.\n" +
-                "To display a terrorist with the most messages, press \"2\"." +
-                " \r\n To display the Most Dangerous Terrorist, press \"3\"." +
-                " \r\n To view attack tools and their status press \"4\"." +
-                " \r\n To perform an attack, press \"5\"." +
-                " \r\n To exit press \"6\".  ");
+            Console.WriteLine(@"
+========= Terrorist Management System =========
+
+[1]  Show all living terrorists
+[2]  Show the terrorist with the most messages
+[3]  Show the most dangerous terrorist
+[4]  Show all attack tools and their status
+[5]  Launch an attack
+[6]  Exit the system
+
+==============================================
+Enter your choice:
+");
+
             int num = int.Parse(Console.ReadLine());
             return num;
         }
@@ -55,8 +62,16 @@ namespace attack_management_software
                         idf.Finding_the_Most_Dangerous_Terrorist();
                         break;
                     case 4:
+                        Console.WriteLine("===== Attack Tools Status =====");
+
                         foreach (Weapons tool in allToll.Weapons)
-                        { Console.WriteLine($"The {tool.name} vessel is designed for attack in {tool.purpose} and has {tool.countOfAattack} ammunition. And {tool.countOfGas} fuel."); }
+                        {
+                            Console.WriteLine($"Tool Name   : {tool.name}");
+                            Console.WriteLine($"Purpose     : {tool.purpose}");
+                            Console.WriteLine($"Ammunition  : {tool.countOfAattack}");
+                            Console.WriteLine($"Fuel        : {tool.countOfGas}");
+                            Console.WriteLine(new string('-', 35));
+                        }
                         break;
                     case 5:
                         idf.attack.attack(idf.intelligence.SearchingForDangerousTerrorist());
@@ -65,7 +80,7 @@ namespace attack_management_software
                         run = false;
                         break;
                     default:
-                        Console.WriteLine("Wrong choice");
+                        Console.WriteLine("Invalid choice. Please enter a number between 1 and 6.");
                         break;
 
 

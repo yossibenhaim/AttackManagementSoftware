@@ -50,13 +50,15 @@ namespace attack_management_software
 
         public void printAllTerroristIsLife()
         {
+            Console.WriteLine("===== Living Terrorists =====");
+            Console.WriteLine($"{"Name",-20} | {"Danger Rating",-5}");
+            Console.WriteLine(new string('-', 32));
+
             foreach (Terrorist terrorist in terrorists.list_of_terrorists)
             {
-                if (terrorist.Status)
-                {
-                    Console.WriteLine($"name :{terrorist.Name_of_terrorist} -- Rating {terrorist.level_of_danger()}");
-                }
+                Console.WriteLine($"{terrorist.Name_of_terrorist,-20} | {terrorist.level_of_danger(),-5}");
             }
+
         }
 
 
