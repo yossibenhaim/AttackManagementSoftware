@@ -41,9 +41,11 @@ namespace attack_management_software
                     if ((weapon.countOfGas > 0) && (weapon.countOfAattack > 0))
                     {
                         check = true;
-                        Console.WriteLine($"the locision is {terrorist.Terrorist_location}");
-                        Console.WriteLine($"the tool of appropriate is {weapon.name}");
-                    }    
+                        Console.WriteLine($"Location           : {terrorist.Terrorist_location}");
+                        Console.WriteLine($"Appropriate Weapon : {weapon.name}");
+                        break;
+
+                    }
                 }
             }
             if (!check)
@@ -58,24 +60,33 @@ namespace attack_management_software
         {
 
             Weapons weapon = FindingSuitableAttackTool2(terrorist);
-            Console.WriteLine("If you want to perform the attack, press 1. Otherwise, press 2.");
-            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("To perform the attack, press 1. To cancel, press 2.");
+
+            int a;
+            while (!int.TryParse(Console.ReadLine(), out a) || (a != 1 && a != 2))
+            {
+                Console.WriteLine("Invalid input. Please press 1 to attack or 2 to cancel.");
+            }
+
             switch (a)
             {
                 case 1:
                     terrorist.Status = false;
                     weapon.countOfAattack--;
                     weapon.countOfGas--;
-                    Console.WriteLine($"The terrorist {terrorist.Name_of_terrorist} has been eliminated!!");
+                    Console.WriteLine($"The terrorist {terrorist.Name_of_terrorist} has been eliminated!");
                     break;
 
                 case 2:
+                    Console.WriteLine("Attack cancelled.");
                     break;
+
                 default:
-                    Console.WriteLine("Error!");
+                    Console.WriteLine("Unexpected error: Invalid choice.");
                     break;
             }
-            
+
+
         }
 
     }

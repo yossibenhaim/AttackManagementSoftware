@@ -52,8 +52,12 @@ namespace attack_management_software
         
         public void PrintAllMassage()
         {
+            Console.WriteLine("===== Most Active Terrorist - Message Log =====");
             foreach (IntelligenceMessages m in this.messages)
-            { Console.WriteLine($"the terrorist {m.name} is show in {m.location} in {m.date}"); }
+            {
+                Console.WriteLine($"Terrorist: {m.name,-20} | Location: {m.location,-15} | Date: {m.date}");
+            }
+
         }
 
 
