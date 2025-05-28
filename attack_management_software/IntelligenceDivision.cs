@@ -8,32 +8,19 @@ using System.Threading.Tasks;
 
 namespace attack_management_software
 {
-    internal class IntelligenceDivision 
+    internal class IntelligenceDivision
     {
-        public ListAllTerrorist terrorists;
-        public AllMessage messages;
-        public IntelligenceDivision(ListAllTerrorist allTerrorist, AllMessage allMessage)
+        public ListAllTerrorist allTerrorist;
+        public IntelligenceDivision(ListAllTerrorist AllTerrorist)
         {
-            this.terrorists = allTerrorist;
-            this.messages = allMessage;
+            this.allTerrorist = AllTerrorist;
         }
-
-        public void searchTerrorist(string name)
-        {
-            foreach(Terrorist terrorist in this.terrorists.list_of_terrorists)
-            {
-                if (terrorist.Name_of_terrorist == name)
-                {
-                    Console.WriteLine("The terrorist has been found.");
-                }
-            }
-        }
-
+        
         public Terrorist SearchingForDangerousTerrorist()
         {
             int hige = 0;
-            Terrorist higeTerrorist = this.terrorists.list_of_terrorists[0];
-            foreach (Terrorist terrorist in this.terrorists.list_of_terrorists)
+            Terrorist higeTerrorist = this.allTerrorist.list_of_terrorists[0];
+            foreach (Terrorist terrorist in this.allTerrorist.list_of_terrorists)
             { 
                 if (terrorist.level_of_danger() >= hige)
                 {
@@ -48,17 +35,18 @@ namespace attack_management_software
             return higeTerrorist;
         }
 
-        public void printAllTerroristIsLife()
+        public List<Terrorist> returnAllTerroristIsLife()
         {
-            Console.WriteLine("===== Living Terrorists =====");
-            Console.WriteLine($"{"Name",-20} | {"Danger Rating",-5}");
-            Console.WriteLine(new string('-', 32));
+            List<Terrorist> terroristsIsLife = new List<Terrorist>();
 
-            foreach (Terrorist terrorist in terrorists.list_of_terrorists)
-            {
-                Console.WriteLine($"{terrorist.Name_of_terrorist,-20} | {terrorist.level_of_danger(),-5}");
+            foreach (Terrorist terrorist in allTerrorist.list_of_terrorists)
+            {   if (terrorist.Status)
+                {
+                    terroristsIsLife.Add(terrorist);
+
+                }
             }
-
+            return terroristsIsLife;
         }
 
 
