@@ -15,11 +15,11 @@ namespace attack_management_software
         public Attack attack;
         public AllMessage allMessage;
 
-        public IDF(tolls tolls, ListAllTerrorist allTerrorist) : base(allTerrorist)
+        public IDF(tolls tolls, ListAllTerrorist allTerrorist, AllMessage allMessage, Attack attack) : base(allTerrorist)
         {
             this.allToll = tolls;
-            this.attack = new Attack(allToll);
-            this.allMessage = new AllMessage(allTerrorist);
+            this.allMessage = allMessage;
+            this.attack = attack;
         }
 
         public void printAllTerroristIsLife()
