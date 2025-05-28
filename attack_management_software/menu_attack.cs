@@ -29,7 +29,7 @@ Enter your choice:
             Console.WriteLine(MainMenuText);
 
             int num;
-            while (!int.TryParse(Console.ReadLine(), out num) || (num >= 1 && num <= 6))
+            while (!int.TryParse(Console.ReadLine(), out num) || (num < 1 || num > 7))
             {
                 Console.WriteLine("Invalid input. Please press a number between 1 and 6..");
             }
