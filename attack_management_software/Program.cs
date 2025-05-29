@@ -7,16 +7,18 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using static Google.Cloud.AIPlatform.V1.FindNeighborsRequest.Types;
 
 namespace attack_management_software
 {
 
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            menu_attack mmenu = new menu_attack();
-            mmenu.start_menu(mmenu.Menu);
+            //menu_attack mmenu = new menu_attack();
+            //mmenu.start_menu(mmenu.Menu);
+
 
         }
     }
