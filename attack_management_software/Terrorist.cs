@@ -49,9 +49,10 @@ namespace attack_management_software
                     Dangerous_weapons = 3;
                     break;
                 case "AK47":
-                    Dangerous_weapons = 3;
+                    Dangerous_weapons = 4;
                     break;
             }
+            Console.WriteLine(Type_of_weapon.Length);
             return Dangerous_weapons;
         }
 

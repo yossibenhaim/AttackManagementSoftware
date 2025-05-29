@@ -51,7 +51,8 @@ namespace attack_management_software
             List<IntelligenceMessages> messages =  allMessage.ReturnAllMassage();
             Console.WriteLine("===== Most Active Terrorist - Message Log =====");
             foreach (IntelligenceMessages m in messages)
-            { Console.WriteLine($"Terrorist: {m.name,-20} | Location: {m.location,-15} | Date: {m.date}"); }
+            {
+             Console.WriteLine($"Terrorist: {m.name,-20} | Location: {m.location,-15} | Date: {m.date}"); }
         }
 
         public void PrintStatusToolsAttack()

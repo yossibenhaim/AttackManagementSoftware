@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.PerformanceData;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,9 +38,11 @@ Enter your choice:
         }
 
 
-        public void start_menu(Func<int> menu)
+        public async Task start_menu(Func<int> menu)
         {
+            HttpClient client = new HttpClient();
 
+            QueryToGemini qtg = new QueryToGemini(client);
             tolls allToll = new tolls();
             Video video = new Video();
             Weapons f16 = new Weapons("F16", "building", 1, 10);
@@ -49,8 +52,8 @@ Enter your choice:
             allToll.addedTool(f16);
             allToll.addedTool(tank);
 
-            ListAllTerrorist allTerrorist = new ListAllTerrorist();
-            allTerrorist.Terrorist_creator();
+            ListAllTerrorist allTerrorist = new ListAllTerrorist(qtg);
+            var generateTask = allTerrorist.StartGeneratingTerroristsPeriodically(allTerrorist);
             Attack attack = new Attack(allToll);
             AllMessage allMessage = new AllMessage(allTerrorist);
             IDF idf = new IDF(allToll, allTerrorist, allMessage, attack);
