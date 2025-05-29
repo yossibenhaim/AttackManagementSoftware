@@ -51,7 +51,9 @@ Enter your choice:
 
             ListAllTerrorist allTerrorist = new ListAllTerrorist();
             allTerrorist.Terrorist_creator();
-            IDF idf = new IDF(allToll, allTerrorist);
+            Attack attack = new Attack(allToll);
+            AllMessage allMessage = new AllMessage(allTerrorist);
+            IDF idf = new IDF(allToll, allTerrorist, allMessage, attack);
 
 
             bool run = true;
