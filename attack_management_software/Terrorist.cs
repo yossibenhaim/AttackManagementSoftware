@@ -39,19 +39,24 @@ namespace attack_management_software
             int Dangerous_weapons = 0;
             switch (Type_of_weapon)
             {
-                case "knife":
+                case "Knife":
+                    Console.WriteLine(this.Rank);
                     Dangerous_weapons = 1;
                     break;
-                case "gun":
+                case "Gun":
+                    Console.WriteLine(this.Rank);
                     Dangerous_weapons = 2;
                     break;
                 case "M16":
+                    Console.WriteLine(this.Rank);
                     Dangerous_weapons = 3;
                     break;
                 case "AK47":
+                    Console.WriteLine(this.Rank);
                     Dangerous_weapons = 3;
                     break;
             }
+            Console.WriteLine(Type_of_weapon.Length);
             return Dangerous_weapons;
         }
 

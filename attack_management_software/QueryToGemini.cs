@@ -1,4 +1,5 @@
 ﻿using DotNetEnv;
+using Sprache;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Net.Http;
 using System.Security.Policy;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static Google.Apis.Requests.BatchRequest;
 
@@ -34,15 +36,15 @@ namespace attack_management_software
 
 
 
-        public async Task QueryToGemini()
+        public async Task<string> queryToGemini(string str)
         {
             Env.Load();
 
             string API_KEY = Environment.GetEnvironmentVariable("GEMINI_API_KEY").ToString();
             if (API_KEY.Length == 0)
             {
-                Console.WriteLine("Error: the api is empty");
-                return;
+                return "Error: the api is empty";
+                 
             }
 
             HttpClient client = new HttpClient();
@@ -57,7 +59,7 @@ namespace attack_management_software
                 {
                     parts = new[]
                     {
-                        new { text = $" {Console.ReadLine()} תענה לי באנגלית" } 
+                        new { text = $" {str} תענה לי באנגלית" } 
                     }
                 }
             },
@@ -73,10 +75,13 @@ namespace attack_management_software
 
             string responseString = await response.Content.ReadAsStringAsync();
 
+
             Root root = JsonSerializer.Deserialize<Root>(responseString);
 
-            string a = root.candidates[0].content.parts[0].text;
-            Console.WriteLine(a);
+            string result = root.candidates[0].content.parts[0].text;
+            string cleaned = Regex.Replace(result, @"\r\n?|\n", "");
+            Console.WriteLine(cleaned);
+            return cleaned;
         }
     }
 }

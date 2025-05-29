@@ -1,4 +1,5 @@
 ﻿using attack_management_software;
+using Google.Cloud.AIPlatform.V1.Schema.Predict.Prediction;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,9 +17,8 @@ namespace attack_management_software
     {
         static async Task Main(string[] args)
         {
-            //menu_attack mmenu = new menu_attack();
-            //mmenu.start_menu(mmenu.Menu);
-
+            menu_attack mmenu = new menu_attack();
+            await mmenu.start_menu(mmenu.Menu);
 
         }
     }
