@@ -15,6 +15,13 @@ namespace attack_management_software
 {
     internal class QueryToGemini
     {
+        public HttpClient client;
+
+        public QueryToGemini(HttpClient client)
+        {
+            this.client = client;
+        }
+
         public class Root
         {
             public List<Candidate> candidates { get; set; }
@@ -46,8 +53,6 @@ namespace attack_management_software
                 return "Error: the api is empty";
                  
             }
-
-            HttpClient client = new HttpClient();
 
             string fullModelName = "models/gemini-1.5-flash"; 
             string url = $"https://generativelanguage.googleapis.com/v1beta/{fullModelName}:generateContent?key={API_KEY}";
